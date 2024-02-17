@@ -7,6 +7,7 @@ import { StepBack } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import NewLegacyTask from '../_components/legacy-task/new-legacy-task'
+import NewTodoAdd from '@/app/(main)/_components/new-todo-add'
 import LegacyTaskCard from '../_components/legacy-task/legacy-task-card'
 import {motion} from "framer-motion"
 import { ScrollArea } from '@/components/ui/scroll-area'
