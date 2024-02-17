@@ -32,7 +32,9 @@ const MobileSidebar = ({workspaces}: WorkspaceListProps) => {
             </div>
         </SheetTrigger>
         <SheetContent side={"left"} className="w-fit">
+            <SheetClose>
               <Sidebar workspaces={workspaces}/>
+            </SheetClose>
         </SheetContent>
     </Sheet>
 
