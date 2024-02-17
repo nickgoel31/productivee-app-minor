@@ -43,7 +43,7 @@ const Navbar = ({workspaces}: WorkspaceListProps) => {
           <div className='flex items-center gap-6'>
             <Link target='_blank' href={"/showcase/features"} className='flex items-center gap-1 text-xs font-medium hover:underline underline-offset-2 transition'><InfoIcon size={15}/>{"Features!"}</Link>
             <UserButton afterSignOutUrl='/signin' />
-            {/* <ModeToggle /> */}
+            <ModeToggle />
             {/* <ModeToggle /> */}
           </div>
         </div>

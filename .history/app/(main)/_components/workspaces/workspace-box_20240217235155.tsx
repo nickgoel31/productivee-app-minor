@@ -19,8 +19,8 @@ const WorkspaceBox = ({name, desc,id,imageUrl}: WorkspaceProps) => {
         </div>
 
         <div className='absolute bottom-0 flex justify-between gap-1 py-4 px-3 items-end w-full h-[70%] bg-gradient-to-t from-black via-black/60 to-transparent group-hover:text-green-400 transition'>
-            <h2 className='line-clamp-1 font-medium text-sm text-white group-hover:text-green-400 transition'>{name}</h2>
-            <ChevronRightCircle className='shrink-0 text-white group-hover:text-green-400 transition' size={20}/>
+            <h2 className='line-clamp-1 font-medium text-sm dark:text-background'>{name}</h2>
+            <ChevronRightCircle className='shrink-0' size={20}/>
         </div>
     </Link>
   )

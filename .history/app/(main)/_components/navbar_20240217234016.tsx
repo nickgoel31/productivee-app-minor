@@ -44,7 +44,6 @@ const Navbar = ({workspaces}: WorkspaceListProps) => {
             <Link target='_blank' href={"/showcase/features"} className='flex items-center gap-1 text-xs font-medium hover:underline underline-offset-2 transition'><InfoIcon size={15}/>{"Features!"}</Link>
             <UserButton afterSignOutUrl='/signin' />
             {/* <ModeToggle /> */}
-            {/* <ModeToggle /> */}
           </div>
         </div>
       ) : (
@@ -59,6 +58,7 @@ const Navbar = ({workspaces}: WorkspaceListProps) => {
             </Button>
             <Link target='_blank' href={"/showcase/features"} className='flex items-center gap-1 text-xs font-medium hover:underline underline-offset-2 transition'><InfoIcon size={15}/>{"Features!"}</Link>
             <UserButton afterSignOutUrl='/showcase' />
+            <ModeToggle />
           </div>
         </div>
       )

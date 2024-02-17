@@ -5,5 +5,4 @@ declare global{
 }
 
 export const db = globalThis.prisma || new PrismaClient()
-//TODO CHNAGE TO NOT EQUALS TO
 if(process.env.NODE_ENV === "production") globalThis.prisma

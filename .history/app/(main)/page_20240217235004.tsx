@@ -51,7 +51,7 @@ export default async function Home() {
 
         {randomWorkspace && (
           <div className=' rounded-xl p-4 flex-[1.8] flex flex-col gap-4'>
-          <h2 className='text-lg font-semibold text-neutral-600 dark:text-neutral-200'>
+          <h2 className='text-lg font-semibold text-neutral-400 dark:text-neutral-200'>
             Continue working with {randomWorkspace ? randomWorkspace.name : '...'}
           </h2>
 

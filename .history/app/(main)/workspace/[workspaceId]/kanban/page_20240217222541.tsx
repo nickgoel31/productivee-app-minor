@@ -43,7 +43,7 @@ const KanbanPage = async ({params}: {params: {workspaceId:string}}) => {
       <div className='flex w-full '>
         <div className='grid grid-cols-1 lg:flex gap-6 w-full lg:min-h-[calc(100vh-200px)] '>
           {columns.map((col) => (
-            <KanbanColumn key={col.id} col={col} colorScheme={col.colorScheme} tasks={tasks} workspaceId={workspaceId}/>
+            <KanbanColumn key={col.id} col={col} tasks={tasks} workspaceId={workspaceId}/>
           ))}
         </div>
       </div>

@@ -14,7 +14,7 @@ interface Props{
     workspaceId: string;
 }
 
-const KanbanColumn = ({col, tasks, workspaceId,colorScheme}:Props) => {
+const KanbanColumn = ({col, tasks, workspaceId}:Props) => {
 
     const filteredTasks = tasks?.filter(t => t.columnId === col.id);
 
@@ -25,7 +25,7 @@ const KanbanColumn = ({col, tasks, workspaceId,colorScheme}:Props) => {
   return (
     <div className='w-full h-full flex flex-col gap-5 items-start justify-start py-2 px-3'>
         <div className='flex items-center justify-between w-full'>
-            <h3 className={`font-medium ${colorScheme} `}>{col.title}</h3>
+            <h3 className={`font-medium ${col.colorScheme}`}>{col.title}</h3>
             <p className='text-muted-foreground text-sm'>{filteredTasks?.length}</p>
         </div>
 

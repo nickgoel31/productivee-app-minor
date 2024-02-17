@@ -22,7 +22,7 @@ const KanbanTaskCard = ({task,workspaceId, col}:Props) => {
     <>
         <Link href={`/workspace/${workspaceId}/kanban/${kanbanId}`}>
             {col.id === 4 ? (
-                <div className='border bg-card rounded p-3 cursor-pointer flex items-center justify-between opacity-50'>
+                <div className='border bg-neutral-900 rounded p-3 cursor-pointer flex items-center justify-between opacity-50'>
                     <h4 className='text-sm text-neutral-200 line-through'>{task.title}</h4>
                 </div>
             ) : (

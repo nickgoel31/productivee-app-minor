@@ -6,8 +6,6 @@ import React from 'react'
 const Logo = () => {
   const {theme} = useTheme()
 
-  console.log(theme)
-
   const isLightTheme = theme === "light" ? true : false;
 
   return (
