@@ -1,0 +1,17 @@
+import { Column } from '@/types/kanban'
+import React from 'react'
+
+interface Props{
+    column: Column
+}
+
+const KanbanColumn = (props: Props) => {
+    const {column} = props;
+  return (
+    <div className='bg-neutral-900 p-4 '>
+        <h1></h1>
+    </div>
+  )
+}
+
+export default KanbanColumn

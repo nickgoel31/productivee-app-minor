@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("AIVEN_DATABASE_URL")
+}
+
+model LegacyTask {
+  id          String    @id @default(uuid())
+  title       String
+  createdAt   DateTime  @default(now())
+  isDone      Boolean   @default(false)
+  workspaceId String
+  subTasks    SubTask[]
+  // user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+enum TaskStatus {
+  ON_HOLD
+  TODO
+  IN_PROGRESS
+  COMPLETED
+}
+
+model Task {
+  id String @id @default(uuid())
+
+  title       String
+  description String?  @db.Text
+  columnId    Int      @default(2)
+  // subtasks    SubTask[]
+  workspaceId String
+  tags        String[]
+  createdAt   DateTime @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+model SubTask {
+  id           String     @id @default(uuid())
+  title        String
+  createdAt    DateTime   @default(now())
+  isDone       Boolean    @default(false)
+  priority     Int        @default(1)
+  legacyTaskId String
+  legacyTask   LegacyTask @relation(fields: [legacyTaskId], references: [id], onDelete: Cascade)
+}
+
+model Workspace {
+  id          String       @id @default(uuid())
+  userId      String
+  name        String
+  description String?
+  imageUrl    String
+  createdAt   DateTime     @default(now())
+  colorScheme String?      @default("green-500")
+  tasks       Task[]
+  legacyTasks LegacyTask[]
+}

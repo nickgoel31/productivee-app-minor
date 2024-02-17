@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// model ToDo {
+//   id          String    @id @default(uuid())
+//   // userId      String   @unique
+//   title       String
+//   description String?
+//   createdAt   DateTime  @default(now())
+//   isDone      Boolean   @default(false)
+//   workspaceId String
+//   subTasks    SubTask[]
+//   // user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+//   workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+// }
+
+enum TaskStatus {
+  ON_HOLD
+  TODO
+  IN_PROGRESS
+  COMPLETED
+}
+
+model Task {
+  id String @id @default(uuid())
+
+  title       String
+  description String?    @db.Text
+  status      TaskStatus @default(TODO)
+  // subtasks    SubTask[]
+  workspaceId String
+  // tags        String[]
+  createdAt   DateTime   @default(now())
+
+  workspace Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+}
+
+// model SubTask {
+//   id        String   @id @default(uuid())
+//   title     String
+//   createdAt DateTime @default(now())
+//   isDone    Boolean  @default(false)
+//   priority  Int      @default(1)
+//   taskId    String
+//   task      Task     @relation(fields: [taskId], references: [id], onDelete: Cascade)
+// }
+
+model Workspace {
+  id          String   @id @default(uuid())
+  userId      String
+  name        String
+  description String?
+  imageUrl    String
+  createdAt   DateTime @default(now())
+  tasks       Task[]
+}

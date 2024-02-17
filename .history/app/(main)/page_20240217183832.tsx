@@ -1,0 +1,57 @@
+
+import { KanbanIcon, ListChecks } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+
+export default function Home() {
+  // const [currentTime, setCurrentTime] = useState(new Date());
+
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentTime(new Date());
+  //   }, 1000); // Update every second
+
+  //   return () => clearInterval(intervalId);
+  // }, []); // Run effect only once when component mounts
+
+  // const hours = currentTime.getHours().toString().padStart(2, '0'); // Ensure two-digit format
+  // const minutes = currentTime.getMinutes().toString().padStart(2, '0'); // Ensure two-digit format
+  // const formattedTime = `${hours}:${minutes}`;
+
+  return (
+    <main className="flex flex-col gap-8 h-full py-8 flex-1 pr-10">
+      <div className="space-y-2">
+        <h1 className="font-semibold text-4xl">Overview</h1>
+        <p className="font-medium text-sm text-neutral-400">We are all about productivity</p>
+      </div>
+
+      <div className="w-full flex flex-col gap-6 ">
+        <div className='flex items-center w-full gap-4'>
+          <div className='border rounded-xl p-4 flex-[1.2] h-48'>
+          
+          </div>
+        </div>
+
+        <div className=' rounded-xl p-4 flex-[1.8] flex flex-col gap-4'>
+            <h2 className='text-lg font-semibold text-neutral-200'>
+              Continue working with {"Lutune AI"}
+            </h2>
+
+            <div className='flex items-center gap-4'>
+              <div className='font-medium flex flex-col items-center justify-center gap-2 border rounded p-4'>
+                <KanbanIcon />
+                Kanban board
+              </div>
+
+              <div className='font-medium flex flex-col items-center justify-center gap-2 border rounded p-4'>
+                <ListChecks />
+                <p className='flex items-center gap-1 justify-center'>
+                Tasks <span className='text-xs font-medium text-muted-foreground'>(legacy)</span>
+                </p>
+              </div>
+            </div>
+
+          </div>
+      </div>
+    </main>
+  );
+}

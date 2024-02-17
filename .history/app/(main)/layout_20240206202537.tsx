@@ -1,0 +1,14 @@
+
+import React from 'react'
+import Sidebar from './_components/sidebar'
+
+const MainLayout = ({children} : {children: React.ReactNode}) => {
+  return (
+    <div className='h-full flex items-center py-14 justify-center'>
+      <Sidebar />
+      {children}
+    </div>
+  )
+}
+
+export default MainLayout
