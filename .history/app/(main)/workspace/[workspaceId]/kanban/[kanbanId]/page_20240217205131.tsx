@@ -140,7 +140,7 @@ const KanbanTaskPage = async ({params} : KanbanParams) => {
                 </>
               ) : (
                 <p className='text-xs font-medium text-muted-foreground text-center'>
-                  No subtasks created yet! Click the &apos;+&apos; button below to add one.
+                  No subtasks created yet! Click the '+' button below to add one.
                 </p>
               )}
               

@@ -69,8 +69,8 @@ const LegacyTaskCard = ({task,subtasks}:Props) => {
                 {hasSubtasks ? (
                     (
                         <div className='flex flex-col w-full'>
-                            {subtasks?.map((st,index) => (
-                                <SubtaskCard key={index} subTask={st} taskIsDone={task.isDone}/>
+                            {subtasks?.map((st) => (
+                                <SubtaskCard subTask={st} taskIsDone={task.isDone}/>
                             ))}
                         </div>
                     )

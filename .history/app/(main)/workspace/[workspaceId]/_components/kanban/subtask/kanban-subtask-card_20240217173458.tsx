@@ -30,7 +30,7 @@ const KanbanSubtaskCard = ({subtask,workspaceId}:Props) => {
 
   useEffect(() => {
     updateIsDoneKanbanSubtaskInDB(subtask.id, isDone)
-  },[isDone,subtask.id])
+  },[isDone])
 
   return (
     <motion.div layout layoutId={subtask.id} className={cn('max-w-screen-lg border py-2 px-4 rounded flex items-center justify-between', isDone && "text-neutral-500")}>

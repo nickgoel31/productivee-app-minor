@@ -11,7 +11,7 @@ const ColumnSelect = ({prevColumnId,taskId,workspaceId}:{prevColumnId:number,tas
 
     useEffect(() => {
         editColumnInTask(activeColumn, taskId,workspaceId)
-    },[activeColumn, taskId,workspaceId])
+    },[activeColumn])
 
     const handleColumns = (columnId: number) => {
         if(activeColumn === columnId) return;

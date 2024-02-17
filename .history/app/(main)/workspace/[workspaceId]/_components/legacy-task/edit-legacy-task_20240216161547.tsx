@@ -48,7 +48,7 @@ const EditLegacyTask = ({taskName,taskId}:{taskName:string, taskId:string}) => {
 
         <DialogContent>
             <DialogHeader>
-                <DialogTitle>Edit task &quot;{taskName}&quot;</DialogTitle>
+                <DialogTitle>Edit task "{taskName}"</DialogTitle>
             </DialogHeader>
 
             <Form {...form}>

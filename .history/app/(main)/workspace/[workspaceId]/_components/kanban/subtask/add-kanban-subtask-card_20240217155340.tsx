@@ -42,7 +42,7 @@ const AddKanbanSubtaskCard = ({taskId}:{taskId:string}) => {
             <DialogHeader>
                 <DialogTitle>Add a subtask</DialogTitle>
                 <DialogDescription>
-                    By clicking add button below, you&apos;ll add a subtask to your task!
+                    By clicking add button below, you'll add a subtask to your task!
                 </DialogDescription>
             </DialogHeader>
 

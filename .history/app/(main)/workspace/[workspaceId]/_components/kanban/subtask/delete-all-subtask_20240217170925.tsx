@@ -18,7 +18,7 @@ const DeleteAllKanbanSubtasksBtn = ({taskId}:{taskId:string}) => {
         <AlertDialogContent>
             <AlertDialogHeader>
                 <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-                <AlertDialogDescription>This action can&apos;t be undone! It will delete all subtasks associated with this task.</AlertDialogDescription>
+                <AlertDialogDescription>This action can't be undone! It will delete all subtasks associated with this task.</AlertDialogDescription>
             </AlertDialogHeader>
 
             <AlertDialogFooter className='w-full flex items-center justify-end gap-1'>

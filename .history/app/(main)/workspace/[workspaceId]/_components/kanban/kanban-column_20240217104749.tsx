@@ -31,8 +31,8 @@ const KanbanColumn = ({col, tasks, workspaceId}:Props) => {
         <div className='flex flex-col gap-2 w-full'>
             {filteredTasks?.length ? (
                 <>
-                    {filteredTasks.map((t, index) => (
-                        <KanbanTaskCard key={index} task={t} col={col} workspaceId={workspaceId}/>
+                    {filteredTasks.map((t) => (
+                        <KanbanTaskCard task={t} col={col} workspaceId={workspaceId}/>
                     ))}
                 </>
             ) : (

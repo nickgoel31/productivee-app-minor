@@ -24,7 +24,7 @@ const EditTaskKanban = ({workspaceId,task, col}:Props) => {
         <DialogContent>
                 <DialogHeader>
                     <DialogTitle>
-                        Edit &quot;{task.title}&quot;
+                        Edit "{task.title}"
                     </DialogTitle>
                     <DialogDescription>
                         edit the task thingys here

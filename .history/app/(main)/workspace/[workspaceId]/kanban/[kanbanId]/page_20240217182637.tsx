@@ -134,13 +134,13 @@ const KanbanTaskPage = async ({params} : KanbanParams) => {
             <div className='flex flex-col gap-3 w-full'>
               {subtasks ? (
                 <>
-                  {finalSortedSubtasks?.map((st,index) => (
-                  <KanbanSubtaskCard key={index} subtask={st} workspaceId={task.workspaceId}/>
+                  {finalSortedSubtasks?.map((st) => (
+                  <KanbanSubtaskCard subtask={st} workspaceId={task.workspaceId}/>
                   ))}
                 </>
               ) : (
                 <p className='text-xs font-medium text-muted-foreground text-center'>
-                  No subtasks created yet! Click the &apos;+&apos; button below to add one.
+                  No subtasks created yet! Click the '+' button below to add one.
                 </p>
               )}
               

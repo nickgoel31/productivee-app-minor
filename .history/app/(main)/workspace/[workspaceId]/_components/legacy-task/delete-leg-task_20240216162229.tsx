@@ -24,7 +24,7 @@ const DeleteLegacyTask = ({taskName,taskId}:{taskName:string, taskId:string}) =>
 
             <AlertDialogHeader>
                 <AlertDialogTitle>
-                    Delete task &quot;{taskName}&quot;
+                    Delete task "{taskName}"
                 </AlertDialogTitle>
                 <AlertDialogDescription>
                     This action cannot be undone. Are you sure?

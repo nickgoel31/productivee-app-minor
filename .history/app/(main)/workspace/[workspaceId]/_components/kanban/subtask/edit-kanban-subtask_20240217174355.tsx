@@ -51,9 +51,9 @@ const EditKanbanSubtask = ({subtask,workspaceId}:Props) => {
 
         <DialogContent>
             <DialogHeader>
-                <DialogTitle>Edit &quot;{subtask.title}&quot;</DialogTitle>
+                <DialogTitle>Edit "{subtask.title}"</DialogTitle>
                 <DialogDescription>
-                    Edit the details of this task.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 </DialogDescription>
             </DialogHeader>
 

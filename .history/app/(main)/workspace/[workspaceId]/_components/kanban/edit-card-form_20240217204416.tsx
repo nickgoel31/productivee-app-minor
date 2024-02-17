@@ -40,7 +40,7 @@ interface Props{
 
 const EditKanbanCardForm = ({prevTitle, workspaceId,taskId,prevDesc,prevTags, prevColumnId,column}:Props) => {
 
-    var [tags, setTags] = useState<string[] | undefined>(prevTags)
+    var [tags, setTags] = useState<string[]>(prevTags)
 
     const [activeColumn, setActiveColumn] = useState<number>(prevColumnId)
 
@@ -56,18 +56,14 @@ const EditKanbanCardForm = ({prevTitle, workspaceId,taskId,prevDesc,prevTags, pr
 
     const handleTags = (tag:string) => {
 
-        if (Array.isArray(tags)) {
-            if (tags.includes(tag)) {
-                const filteredTags = tags.filter(t => t !== tag);
-                setTags(filteredTags);
-            } else {
-                setTags([...tags, tag]);
-            }
-        } else {
-            // If tags is undefined or not an array, initialize it as an empty array
-            setTags([tag]);
+        if(tags.includes(tag)){
+            const filteredTags = tags.filter(t => t !== tag) 
+            setTags(filteredTags)
         }
-        
+
+        else{
+            setTags([...tags, tag])
+        }
     }
 
     const handleColumns = (columnId: number) => {
@@ -124,9 +120,9 @@ const EditKanbanCardForm = ({prevTitle, workspaceId,taskId,prevDesc,prevTags, pr
                         <FormLabel>Tags</FormLabel>
                         <FormControl>
                             <div className='flex items-end justify-start flex-wrap mid space-y-1 gap-1'>
-                                {defaultTags.map((tag,index) => (
-                                    <div key={index}
-                                    className={cn(`text-xs text-neutral-300 border rounded-full p-1.5 select-none cursor-pointer px-3 capitalize hover:bg-neutral-300/10 transition`, tags?.includes(tag.value) && "bg-neutral-200 text-neutral-950 font-medium hover:bg-neutral-200/80")}
+                                {defaultTags.map((tag) => (
+                                    <div 
+                                    className={cn(`text-xs text-neutral-300 border rounded-full p-1.5 select-none cursor-pointer px-3 capitalize hover:bg-neutral-300/10 transition`, tags.includes(tag.value) && "bg-neutral-200 text-neutral-950 font-medium hover:bg-neutral-200/80")}
                                     data-value={tag.value}
                                     onClick={() => {handleTags(tag.value)}} >
                                         {tag.value}

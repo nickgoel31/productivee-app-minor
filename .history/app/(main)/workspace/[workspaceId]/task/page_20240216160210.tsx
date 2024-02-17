@@ -63,8 +63,8 @@ const TasksPage = async ({params}: {params: {workspaceId:string}}) => {
           </div>
           ):(
             <div className='w-full max-w-screen-md flex flex-col gap-3'>
-              {sortedTasks?.map((t,index) => (
-                <LegacyTaskCard key={index} task={t} subtasks={subTasks?.filter(st => st.legacyTaskId === t.id)}/>
+              {sortedTasks?.map((t) => (
+                <LegacyTaskCard task={t} subtasks={subTasks?.filter(st => st.legacyTaskId === t.id)}/>
               ))}
             </div>
           )}

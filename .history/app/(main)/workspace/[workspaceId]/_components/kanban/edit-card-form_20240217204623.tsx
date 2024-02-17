@@ -124,8 +124,8 @@ const EditKanbanCardForm = ({prevTitle, workspaceId,taskId,prevDesc,prevTags, pr
                         <FormLabel>Tags</FormLabel>
                         <FormControl>
                             <div className='flex items-end justify-start flex-wrap mid space-y-1 gap-1'>
-                                {defaultTags.map((tag,index) => (
-                                    <div key={index}
+                                {defaultTags.map((tag) => (
+                                    <div 
                                     className={cn(`text-xs text-neutral-300 border rounded-full p-1.5 select-none cursor-pointer px-3 capitalize hover:bg-neutral-300/10 transition`, tags?.includes(tag.value) && "bg-neutral-200 text-neutral-950 font-medium hover:bg-neutral-200/80")}
                                     data-value={tag.value}
                                     onClick={() => {handleTags(tag.value)}} >
