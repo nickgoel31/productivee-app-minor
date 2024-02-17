@@ -1,4 +1,6 @@
 import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Form } from '@/components/ui/form';
 import { StepBack } from 'lucide-react';
 import React from 'react'
 import AddNewTaskKanban from '../_components/kanban/kanban-add-new-task-btn';

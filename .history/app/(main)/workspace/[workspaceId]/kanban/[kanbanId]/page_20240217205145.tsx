@@ -1,6 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { getTaskById } from '@/helpers/getTask';
-import { Column } from '@/types/kanban';
+import { Column, Task } from '@/types/kanban';
+import { StepBack } from 'lucide-react';
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import React from 'react'
 import EditTaskKanban from '../../_components/kanban/edit-task-kanban';
@@ -17,6 +19,8 @@ import KanbanSubtaskCard from '../../_components/kanban/subtask/kanban-subtask-c
 import AddKanbanSubtaskCard from '../../_components/kanban/subtask/add-kanban-subtask-card';
 import { getAllKanbanSubtasksByTaskId } from '@/helpers/getKanbanSubtask';
 import DeleteAllKanbanSubtasksBtn from '../../_components/kanban/subtask/delete-all-subtask';
+import { updateAllIsDoneKanbanSubtaskInDB, updateIsDoneKanbanSubtaskInDB } from '@/actions/kanban-subtasks/edit-kanban-subtask';
+import MarkAllKanbanSubtaskBtn from '../../_components/kanban/subtask/mark-all-subtask';
 import BackBtn from '@/app/(main)/_components/back-btn';
 
 type KanbanParams = {

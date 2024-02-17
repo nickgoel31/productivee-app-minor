@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { getTaskById } from '@/helpers/getTask';
-import { Column } from '@/types/kanban';
+import { Column, Task } from '@/types/kanban';
 import { redirect } from 'next/navigation';
 import React from 'react'
 import EditTaskKanban from '../../_components/kanban/edit-task-kanban';
