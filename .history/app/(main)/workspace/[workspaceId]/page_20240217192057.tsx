@@ -4,6 +4,8 @@ import { getWorkspaceById } from '@/actions/get-workspace';
 import { formatDate } from '@/helpers/format-date';
 import { Cat, Trash2 } from 'lucide-react';
 import React from 'react'
+import TodoCard from '../../_components/todo-card';
+import NewTodoAdd from '../../_components/new-todo-add';
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { Button } from '@/components/ui/button';
 import { deleteWorkspaceInDB } from '@/actions/delete-workspace';
@@ -14,6 +16,7 @@ import Image from 'next/image';
 import DeleteWorkspaceBtnHome from '../../_components/workspaces/delete-workspace-md';
 import { getAllSubtasks } from '@/data/subtasks';
 import { Textarea } from '@/components/ui/textarea';
+import QuillEditor from '../../_components/Editor/QuillEditor';
 import WhiteBoardBtn from './_components/whiteboard/WhiteBoardBtn';
 import NotesBtn from './_components/notes/NotesBtn';
 import KanbanBoardBtn from './_components/kanban/kanban-board-btn';
