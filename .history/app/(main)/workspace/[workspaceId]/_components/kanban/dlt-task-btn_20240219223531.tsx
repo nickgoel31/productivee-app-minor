@@ -9,8 +9,8 @@ import { redirect, useRouter } from 'next/navigation';
 const DeleteTaskBtn = ({taskId,workspaceId}: {taskId:string, workspaceId: string}) => {
     const router = useRouter()
     const handleDeleteTask = () => {
-        deleteTaskById(taskId, workspaceId);  
-        router.back() 
+        deleteTaskById(taskId, workspaceId);   
+        router.refresh()
     }
 
   return (

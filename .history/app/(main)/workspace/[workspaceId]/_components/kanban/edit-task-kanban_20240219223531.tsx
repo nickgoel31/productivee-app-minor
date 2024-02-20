@@ -27,7 +27,7 @@ const EditTaskKanban = ({workspaceId,task, col}:Props) => {
                         Edit &quot;{task.title}&quot;
                     </DialogTitle>
                     <DialogDescription>
-                         Edit task information here.
+                        edit the task thingys here
                     </DialogDescription>
 
                     <EditKanbanCardForm 

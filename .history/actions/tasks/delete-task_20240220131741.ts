@@ -3,7 +3,6 @@
 import { db } from "@/lib/db"
 import { auth } from "@clerk/nextjs";
 import { revalidatePath } from "next/cache"
-import { redirect } from "next/navigation";
 
 export const deleteCompletedTasks = async (workspaceId:string) => {
 
@@ -31,7 +30,7 @@ export const deleteTaskById = async (id: string, workspaceId:string) => {
             },
         })
 
-        revalidatePath("/")
+        revalidatePath(`/workspace/${workspaceId}`)
     } catch (error) {
         console.log(error)
     }

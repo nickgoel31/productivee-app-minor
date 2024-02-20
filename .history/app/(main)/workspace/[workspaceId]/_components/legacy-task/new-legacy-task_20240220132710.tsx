@@ -77,7 +77,7 @@ const NewLegacyTask = ({workspaceId}:{workspaceId:string}) => {
                     </FormItem>
                 )}
                 />
-                <DialogClose disabled={!isValid} className='w-full flex justify-end'>
+                <DialogClose disabled={!isValid}>
                   <Button className="w-fit mt-3" type="submit">
                       Add to the list
                   </Button>

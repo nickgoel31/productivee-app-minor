@@ -31,7 +31,7 @@ export const deleteTaskById = async (id: string, workspaceId:string) => {
             },
         })
 
-        revalidatePath("/")
+        Response.redirect(`/workspace/${workspaceId}/kanban`);
     } catch (error) {
         console.log(error)
     }
