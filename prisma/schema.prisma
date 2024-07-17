@@ -6,12 +6,12 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("AIVEN_DATABASE_URL")
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
 }
 
 model LegacyTask {
-  id          String    @id @default(uuid())
+  id          String    @id @default(uuid()) @map("_id")
   title       String
   createdAt   DateTime  @default(now())
   isDone      Boolean   @default(false)
@@ -22,7 +22,7 @@ model LegacyTask {
 }
 
 model SubTask {
-  id           String     @id @default(uuid())
+  id           String     @id @default(uuid()) @map("_id")
   title        String
   createdAt    DateTime   @default(now())
   isDone       Boolean    @default(false)
@@ -39,9 +39,9 @@ enum TaskStatus {
 }
 
 model Task {
-  id             String          @id @default(uuid())
+  id             String          @id @default(uuid()) @map("_id")
   title          String
-  description    String?         @db.Text
+  description    String?         
   columnId       Int             @default(2)
   // subtasks    SubTask[]
   workspaceId    String
@@ -52,7 +52,7 @@ model Task {
 }
 
 model KanbanSubtask {
-  id        String   @id @default(uuid())
+  id        String   @id @default(uuid()) @map("_id")
   title     String
   createdAt DateTime @default(now())
   taskId    String
@@ -62,7 +62,7 @@ model KanbanSubtask {
 }
 
 model Workspace {
-  id          String       @id @default(uuid())
+  id          String       @id @default(uuid()) @map("_id")
   userId      String
   name        String
   description String?
